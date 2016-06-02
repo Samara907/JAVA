@@ -1,4 +1,4 @@
-package oop;
+package object;
 
 class Tv {
 	// Tv's Property(member variable)

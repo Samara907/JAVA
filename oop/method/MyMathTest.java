@@ -1,4 +1,4 @@
-package oop;
+package method;
 
 public class MyMathTest {
 	public static void main(String args[]) {

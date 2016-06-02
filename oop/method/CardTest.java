@@ -1,4 +1,4 @@
-package oop;
+package method;
 
 class Card {
 	String kind;

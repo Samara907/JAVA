@@ -1,4 +1,4 @@
-package oop;
+package method;
 
 public class CallStackTest2 {
 	public static void main(String[] args) {
