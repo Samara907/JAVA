@@ -1,15 +1,63 @@
 # JAVA
+
 Java 1.8
-Most Error
-1. cannot find symbol or cannot resolve symbol
-= 지정된 변수나 메서드를 찾을 수 없다. 선언되지 않은 변수나 메서드를 사용하거나, 변수 또는 메서드의 이름을 잘못 사용한 경우
-2. ';' expected
-= 세미콜론이 없다
-3. Exception in Thread "main" java.lang.NoSuchMethodError : main
-= . Main 메서드의 부재
-4. Exception in thread "main" java.lang.NoClassDefFoundError : Hello
-= .Hello 클래스의 부재
-5. illegal start of expression
-= 문법오류
-6. class, interface, or enum expected
-= 키워드 class or interface or enum 이 없다. 보통 괄호 '{' or '}' 의 개수가 불일치
+
+ 잦은오류
+
+    1. cannot find symbol or cannot resolve symbol = 지정된 변수나 메서드를 찾을 수 없다.
+    선언되지 않은 변수나 메서드를 사용하거나, 변수 또는 메서드의 이름을 잘못 사용한 경우
+    2. ';' expected
+    = 세미콜론이 없다
+    3. Exception in Thread "main" java.lang.NoSuchMethodError : main
+    = . Main 메서드의 부재
+    4. Exception in thread "main" java.lang.NoClassDefFoundError : Hello
+    = .Hello 클래스의 부재
+    5. illegal start of expression
+    = 문법오류
+    6. class, interface, or enum expected
+    = 키워드 class or interface or enum 이 없다. 보통 괄호 '{' or '}' 의 개수가 불일치
+
+ 선언위치에 따른 변수의 종류
+
+        변수의 종류     선언위치           생성시기
+    1.    클래스      클래스 영역 O   클래스가 메모리에 올라갈때
+    2.    인스턴스    클래스 영역 O   인스턴스가 생성되었을때
+    3.    지역        클래스 영역 X   변수 선언문이 수행되었을때
+
+  메서드를 사용하는 이유
+
+    1. 높은 재사용성(resuability)
+    2. 중복된 코드의 제거
+    3. 프로그램의 구조화
+
+ JVM의 메모리구조
+  
+    1. 메서드영역(method area)
+    -프로그램 실행 중 어떤 클래스가 사용되면, JVM은 해당 클래스의 클래스파일(*.class)을 읽어서 분석하여 클래스에 대한 정보
+    (클래스 데이터)를 이곳에 저장한다.
+    이 때, 그 클래스의 클래스변수(class variable)도 이 영역에 함께 생성된다.
+    2. 힙(heap)
+    -인스턴스가 생성되는 공간, 프로그램 실행 중 생성되는 인스턴스는 모두 이곳에 생성된다.
+    즉, 인스턴스변수(instance variable)들이 생성되는 공간이다.
+    3. 호출스택(call stack 또는 execution stack)
+    -호출스택은 메서드의 작업에 필요한 메모리 공간을 제공한다.
+    메서드가 호출되면, 호출스택에 호출된 메서드를 위한 메모리가 할당되며, 이 메모리는 메서드가 작업을 수행하는 동안
+    지역변수(매게변수 포함)들과 연산의 중간결과 등을 저장하는데 사용된다. 그리고 메서드가 작업을 마치면 할당되었던
+    메모리공간은 반환되어 비워진다
+
+ 호출스택의 특징
+ 
+    -메서드가 호출되면 수행에 필요한 만큼의 메모리를 스택에 할당받는다.
+    -메서드가 수행을 마치고나면 사용했던 메모리를 반환하고 스택에서 제거된다.
+    -호출스택의 제일 위에 있는 메서드가 현재 실행 중인 메서드이다.
+    -아래에 있는 메서드가 바로 위의 메서드를 호출한 메서드이다.
+    
+ 매개변수
+
+    기본형 매개변수 - 변수의 값을 읽기만 할 수 있다.(read only)
+    참조형 매개변수 - 변수의 값을 읽고 변경할 수 있다.(read & write)
+    
+
+ 반환타입
+   
+    반환타입이 참조형 이라는 것은 메서드가 객체의 주소를 반환한다는 것을 의미한다.
